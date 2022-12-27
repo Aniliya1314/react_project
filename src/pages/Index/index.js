@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Layout } from "antd";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchUser } from "@/redux/user";
+import { initWebsocket } from "@/redux/websocket";
 import MySider from "./MySider";
 import MyHeader from "./MyHeader";
 import MyContent from "./MyContent";
@@ -21,7 +22,8 @@ function Index() {
     const init = async () => {
       try {
         const username = localStorage.getItem("username");
-        await disptch(fetchUser({ username })).unwrap();
+        const res = await disptch(fetchUser({ username })).unwrap();
+        disptch(initWebsocket(res));
       } catch (e) {}
     };
     init();

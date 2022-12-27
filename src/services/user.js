@@ -62,3 +62,11 @@ export function deleteUser(data) {
     data,
   });
 }
+
+//获取全部用户
+export function getAllUsers() {
+  return request({
+    url: "/users/getAllUsers",
+    method: "get",
+  });
+}

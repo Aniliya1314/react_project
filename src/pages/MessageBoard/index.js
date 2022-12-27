@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect } from "react";
 import { Comment } from "@ant-design/compatible";
 import {
   Divider,
@@ -14,7 +14,6 @@ import {
   Pagination,
 } from "antd";
 import dayjs from "dayjs";
-import { isAuthenticated } from "@/utils/session";
 import { useSelector } from "react-redux";
 import { getMessages, createMessage, deleteMessage } from "@/services/message";
 import {
@@ -25,6 +24,7 @@ import {
   UpCircleOutlined,
 } from "@ant-design/icons";
 import ReactQuill from "react-quill";
+import Score from "./Score";
 import "./style.less";
 import "react-quill/dist/quill.snow.css";
 
@@ -363,7 +363,9 @@ export default function MessageBoard() {
             ))}
         </div>
         <Pagination {...pagination} onChange={pageChange} />
-        <div className="score-box"></div>
+        <div className="score-box">
+          <Score />
+        </div>
       </Card>
     </div>
   );

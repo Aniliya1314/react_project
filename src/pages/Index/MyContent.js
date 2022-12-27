@@ -13,12 +13,14 @@ const Users = LoadableComponent(import("../Users"));
 const Collection = LoadableComponent(import("../Collection"));
 const About = LoadableComponent(import("../About"));
 const MessageBoard = LoadableComponent(import("../MessageBoard"));
+const Chat = LoadableComponent(import("../Chat"));
 
 const tabs = {
   Users: <Users />,
   Collection: <Collection />,
   About: <About />,
   MessageBoard: <MessageBoard />,
+  Chat: <Chat />,
 };
 
 export default function MyContent({

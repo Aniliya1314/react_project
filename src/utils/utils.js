@@ -25,6 +25,17 @@ export function debounce(fn, delay = 500) {
   };
 }
 
+/**
+ * 将img标签转换为【图片】
+ * @param {string} str
+ */
+export function replaceImg(str) {
+  if (typeof str === "string") {
+    str = str.replace(/<img(.*?)>/g, "[图片]");
+  }
+  return str;
+}
+
 /**生成指定区间的随机数*/
 export function randomNum(min, max) {
   return Math.floor(Math.random() * (max - min) + min);
